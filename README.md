@@ -20,6 +20,8 @@ First make sure the module is added in ejabberd.yml on the server port
     captcha: true
 ```
 
+This will create an endpoint for mod_health to listen to at localhost:5280/health
+
 ## Adding additional applications to check
 
 Define the application name as a constant at the top of the file:
@@ -36,6 +38,7 @@ MySQL = get_status(?MYSQL),
 
 
 ## Output
+
 
 You will get a JSON response with a true/false value to tell you if that service is currently running
 
