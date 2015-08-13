@@ -5,7 +5,7 @@
 -module(mod_health).
 
 -export([
-	process/2,
+	process/2
 ]).
 
 -include("ejabberd.hrl").
@@ -39,7 +39,7 @@ check_health() ->
 			{<<"ejabberd">>, get_status(?EJABBERD)},
 			{<<"mnesia">>, get_status(?MNESIA)},
 			{<<"crypto">>, get_status(?CRYPTO)},
-			{<<"ssl", get_status(?SSL)}
+			{<<"ssl">>, get_status(?SSL)}
 			% add addutional applications to check
 	]).
 
