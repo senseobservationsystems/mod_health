@@ -14,7 +14,8 @@
 
 
 % application constants
--define(MNESIA, mnesia).
+% -define(MNESIA, mnesia).
+-define(MYSQL, mysql).
 -define(EJABBERD, ejabberd).
 -define(SSL, ssl).
 -define(CRYPTO, crypto).
@@ -25,7 +26,7 @@ process(Path, #request{method = 'GET'} ) ->
 	[InnerPath] = Path,
 	LPath = string:to_lower(binary_to_list(InnerPath)),
 	case LPath of
-		"health" ->
+		"status" ->
 			check_health();
 		_ ->
 			bad_path_response(LPath)
@@ -37,7 +38,8 @@ process(_Path, _Request) ->
 check_health() ->
 	jsx:encode([
 			{<<"ejabberd">>, get_status(?EJABBERD)},
-			{<<"mnesia">>, get_status(?MNESIA)},
+			% {<<"mnesia">>, get_status(?MNESIA)},
+			{<<"mysql">>, get_status(?MYSQL)},
 			{<<"crypto">>, get_status(?CRYPTO)},
 			{<<"ssl", get_status(?SSL)}
 			% add addutional applications to check
