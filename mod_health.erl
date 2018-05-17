@@ -9,7 +9,6 @@
 ]).
 
 -include("ejabberd.hrl").
--include("jlib.hrl").
 -include("ejabberd_http.hrl").
 
 
