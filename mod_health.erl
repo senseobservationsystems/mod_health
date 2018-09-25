@@ -8,7 +8,7 @@
 	process/2
 ]).
 
--include("ejabberd.hrl").
+% -include("ejabberd.hrl").
 -include("ejabberd_http.hrl").
 
 
