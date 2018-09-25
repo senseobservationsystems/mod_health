@@ -14,7 +14,7 @@
 
 % application constants
 % -define(MNESIA, mnesia).
--define(MYSQL, mysql).
+-define(MYSQL, p1_mysql).
 -define(EJABBERD, ejabberd).
 -define(SSL, ssl).
 -define(CRYPTO, crypto).
